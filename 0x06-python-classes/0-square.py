@@ -1,10 +1,10 @@
-#!/bin/bash/python 3
+#!/usr/bin/bash/python3
 
-'''
-mpty class Square
-'''
+"""
+empty class Square
+"""
 
 class Square:
-    '''This empty class defining square'''
+    """This empty class defining square"""
     pass
 
