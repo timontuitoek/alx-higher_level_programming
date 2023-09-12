@@ -6,16 +6,19 @@ Load, add, save
 
 import sys
 
+save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
-def save_to_json_file(my_obj, filename):
-    """
-    defining a function to save [ython object to JSON file
-    """
-    with open(filename, mode='w', encoding='utf-8') as file:
-        json.dump(my_obj, file)
+if __name__ == "__main__":
 
-    """
-    defining function to load a python from a jSon file
-    """
-    with open(filename, mode='f', encoding='utf-8') as file:
-        return json.load(file)
+    filename = "add_item.json"
+
+    try:
+        item_list = load_from_json_file(filename)
+    except FileNotFoundError:
+        item_list = []
+
+    for item in sys.argv[1:]:
+        item_list.append(item)
+
+    save_to_json_file(item_list, filename)
