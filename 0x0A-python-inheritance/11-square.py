@@ -4,8 +4,10 @@ Module: 11-square
 This module defines a Square class that inherits from Rectangle class.
 """
 
+
 # Import the Rectangle class from module 9-rectangle
 Rectangle = __import__('9-rectangle').Rectangle
+
 
 class Square(Rectangle):
     """
@@ -46,4 +48,3 @@ class Square(Rectangle):
         """
 
         return self.__size ** 2
-
