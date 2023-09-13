@@ -3,6 +3,11 @@
 Retrieve a dictionary representation of a Student instance
 """
 
+class Student:
+    """
+    student first_name, last_name, age
+    """
+
 
 def __init__(self, first_name, last_name, age):
         """
@@ -14,16 +19,10 @@ def __init__(self, first_name, last_name, age):
         self.age = age
 
         def to_json(self, attrs=None):
-        """
-        Returns a dictionary representation of an object or
-        """
-        if not isinstance(attrs, list):
-            return self.__dict__
-        for var in attrs:
-            if not isinstance(var, str):
-                return self.__dict__
-            string_dict = {}
-            for string in attrs:
-                if string in self.__dict__.keys():
-                    string_dict[string] = self.__dict__[string]
-                    return string_dict
+            """
+            Returns a dictionary representation of an object or
+            """
+
+        if attrs is not None and isinstance(attrs, list) and all(isinstance(attr, str) for attr in attrs):
+            return {attr: getattr(self, attr) for attr in attrs if hasattr(self, attr)}
+        return self.__dict__
