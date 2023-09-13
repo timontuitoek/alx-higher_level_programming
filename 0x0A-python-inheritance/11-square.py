@@ -12,17 +12,11 @@ Rectangle = __import__('9-rectangle').Rectangle
 class Square(Rectangle):
     """
     Square class representing a geometric square.
-
-    Attributes:
-        __size (int): The size of the square's sides.
     """
 
     def __init__(self, size):
         """
         Initialize a Square instance with a validated size.
-
-        Args:
-            size (int): The size of the square's sides.
         """
 
         self.integer_validator("size", size)
@@ -32,9 +26,6 @@ class Square(Rectangle):
     def __str__(self):
         """
         Return a string representation of the Square.
-
-        Returns:
-            str: A formatted string containing the size.
         """
 
         return("[Square] {}/{}".format(self.__size, self.__size))
@@ -42,9 +33,6 @@ class Square(Rectangle):
     def area(self):
         """
         Calculate and return the area of the Square.
-
-        Returns:
-            int: The area of the square.
         """
 
         return self.__size ** 2
