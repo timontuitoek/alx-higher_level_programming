@@ -6,19 +6,22 @@ Load, add, save
 
 import sys
 
+
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
-if __name__ == "__main__":
+def add_items():
+    """
+    adds all arguments to a python list
+    """
+    filename = 'add_item.json'
+    if path.isfile(filename):
+        my_list = load_from_json_file(filename)
+    else:
+        my_list = []
 
-    filename = "add_item.json"
+    for i in range(1, len(argv)):
+        my_list.append(argv[i])
+    save_to_json_file(my_list, filename)
 
-    try:
-        item_list = load_from_json_file(filename)
-    except FileNotFoundError:
-        item_list = []
-
-    for item in sys.argv[1:]:
-        item_list.append(item)
-
-    save_to_json_file(item_list, filename)
+print(add_items())
