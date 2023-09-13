@@ -4,7 +4,7 @@ Student to JSON
 """
 
 
-class student:
+class Student:
     """
     class defining a student
     """
@@ -20,8 +20,4 @@ class student:
         """
         retrieve a dictionary representation of a student instance
         """
-        return {
-                "first_name": self.first_name,
-                "last_name": self.last_name,
-                "age": self.age
-                }
+        return self.__dict__
