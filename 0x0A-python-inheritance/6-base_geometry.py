@@ -4,6 +4,7 @@ Module: 6-base_geometry
 Defines the BaseGeometry class for basic geometry operations.
 """
 
+
 class BaseGeometry:
     """
     A class representing basic geometry operations.
@@ -17,4 +18,3 @@ class BaseGeometry:
             Exception: This method is not implemented in the base class.
         """
         raise Exception("area() is not implemented")
-
