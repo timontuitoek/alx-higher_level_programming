@@ -4,8 +4,10 @@ Module: 8-rectangle
 This module defines a Rectangle class that inherits from BaseGeometry.
 """
 
+
 # Import the BaseGeometry class from module 7-base_geometry
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
 
 class Rectangle(BaseGeometry):
     """
@@ -43,10 +45,6 @@ class Rectangle(BaseGeometry):
     def area(self):
         """
         Calculate and return the area of the Rectangle.
-
-        Returns:
-            int: The area of the rectangle.
         """
 
         return self.__width * self.__height
-
