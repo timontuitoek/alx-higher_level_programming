@@ -3,6 +3,7 @@
 Rectangle empty class
 """
 
+
 class Rectangle:
     """
     Rectangle class
@@ -87,9 +88,7 @@ class Rectangle:
 
     def __del__(self):
         """
-        Destructor method to print a message when deleting a rectangle instance.
-        Decrease the number of instances by 1.
+        Destructor method to print message when deleting a rectangle instance.
         """
         print("Bye rectangle...")
         type(self).number_of_instances -= 1
-
