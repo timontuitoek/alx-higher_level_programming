@@ -3,6 +3,7 @@
 Rectangle empty class
 """
 
+
 class Rectangle:
     """
     Rectangle class
@@ -78,4 +79,3 @@ class Rectangle:
         Return a formal string representation of the rectangle.
         """
         return "Rectangle(" + str(self.width) + ", " + str(self.height) + ")"
-
