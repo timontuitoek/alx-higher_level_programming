@@ -1,16 +1,13 @@
 #!/usr/bin/python3
 """Rectangle empty class"""
 
+
 class Rectangle:
     """Rectangle class"""
 
     def __init__(self, width=0, height=0):
         """
         Initializes a new Rectangle instance.
-
-        Args:
-            width (int, optional): The width of the rectangle (default is 0).
-            height (int, optional): The height of the rectangle (default is 0).
         """
         self.width = width
         self.height = height
@@ -60,4 +57,3 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
-
