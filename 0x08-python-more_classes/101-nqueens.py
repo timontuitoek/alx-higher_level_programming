@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 
+
 import sys
+
 
 def is_safe(board, row, col):
     """
@@ -9,7 +11,6 @@ def is_safe(board, row, col):
         board (list): The current state of the board.
         row (int): The current row being considered.
         col (int): The column where we want to place a queen.
-    
     Returns:
         bool: True if it's safe to place a queen, False otherwise.
     """
@@ -24,6 +25,7 @@ def is_safe(board, row, col):
             return False
 
     return True
+
 
 def solve_nqueens(N, board, row=0):
     """
@@ -43,6 +45,7 @@ def solve_nqueens(N, board, row=0):
             board[row] = col
             solve_nqueens(N, board, row+1)
 
+
 if __name__ == "__main__":
     # Check the command-line arguments
     if len(sys.argv) != 2:
@@ -61,4 +64,3 @@ if __name__ == "__main__":
 
     board = [-1] * N
     solve_nqueens(N, board)
-
