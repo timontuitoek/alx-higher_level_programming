@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 """ Define a Rectangle based on 2-rectangle.py """
 
+
 class Rectangle:
     """ Define a rectangle with getters and setters """
 
     def __init__(self, width=0, height=0):
-        """ Initialize a new Rectangle instance with optional width and height """
+        """ Initialize a new Rectangle with optional width and height """
         self.__width = width
         self.__height = height
 
@@ -58,4 +59,3 @@ class Rectangle:
                 if i != self.__height - 1:
                     rect.append("\n")
             return("".join(rect))
-
