@@ -8,10 +8,6 @@ class Rectangle:
     def __init__(self, width=0, height=0):
         """
         Initializes a new Rectangle instance.
-
-        Args:
-            width (int, optional): The width of the rectangle (default is 0).
-            height (int, optional): The height of the rectangle (default is 0).
         """
         self.width = width
         self.height = height
@@ -24,14 +20,6 @@ class Rectangle:
     @width.setter
     def width(self, value):
         """
-        Sets the width of the rectangle.
-
-        Args:
-            value (int): The new width value.
-
-        Raises:
-            TypeError: If value is not an integer.
-            ValueError: If value is less than 0.
         """
         if type(value) != int:
             raise TypeError("width must be an integer")
@@ -48,13 +36,6 @@ class Rectangle:
     def height(self, value):
         """
         Sets the height of the rectangle.
-
-        Args:
-            value (int): The new height value.
-
-        Raises:
-            TypeError: If value is not an integer.
-            ValueError: If value is less than 0.
         """
         if type(value) != int:
             raise TypeError("height must be an integer")
@@ -71,4 +52,3 @@ class Rectangle:
         if 0 in (self.__height, self.__width):
             return 0
         return 2 * (self.__height + self.__width)
-
