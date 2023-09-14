@@ -13,7 +13,6 @@ class Square(Rectangle):
     """
     Square class representing a geometric square.
     """
-
     def __init__(self, size):
         """
         Initialize a Square instance with a validated size.
@@ -34,5 +33,4 @@ class Square(Rectangle):
         """
         Calculate and return the area of the Square.
         """
-
         return self.__size ** 2
