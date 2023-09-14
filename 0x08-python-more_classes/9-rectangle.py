@@ -3,6 +3,7 @@
 Rectangle empty class
 """
 
+
 class Rectangle:
     """
     Rectangle class
@@ -88,7 +89,7 @@ class Rectangle:
 
     def __del__(self):
         """
-        Destructor method to print a message when deleting a rectangle instance.
+        Destructor method to print message when deleting a rectangle instance.
         Decrease the number of instances by 1.
         """
         print("Bye rectangle...")
@@ -97,7 +98,7 @@ class Rectangle:
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """
-        Compares two rectangles and returns the one with a greater or equal area.
+        Compares two rectangles and returns one with a greater or equal area.
         """
         if type(rect_1) != Rectangle:
             raise TypeError("rect_1 must be an instance of Rectangle")
@@ -115,4 +116,3 @@ class Rectangle:
         Creates a square with the same width and height.
         """
         return cls(size, size)
-
