@@ -3,5 +3,5 @@
 -- Results must be sorted in ascending order by cities.id
 SELECT cities.id, cities.name, states.name
 FROM cities
-JOIN status ON cities.states_id = states.id
+INNER JOIN status ON cities.states_id = states.id
 ORDER BY cities.id ASC;
