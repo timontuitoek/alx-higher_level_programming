@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 //checks number of arguments
-const numArguments = process.argv.length - 2//subtracting by 2 to exclude node and script file name
+const numArguments = process.argv.length - 2//subtract ile name node
 
 if (numArguments === 0)
 {
