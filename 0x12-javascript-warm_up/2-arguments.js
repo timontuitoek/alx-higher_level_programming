@@ -1,5 +1,5 @@
 #!/usr/bin/node
-
+'use strict';
 //checks number of arguments
 const numArguments = process.argv.length - 2//subtract ile name node
 
