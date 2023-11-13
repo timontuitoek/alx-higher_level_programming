@@ -1,6 +1,6 @@
 #!/usr/bin/node
 'use strict';
-const num_Arguments = process.argv.length;
+let num_Arguments = process.argv.length;
 if (num_Arguments === 2) {
 	console.log("No argument");
 }
