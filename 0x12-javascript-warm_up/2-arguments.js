@@ -1,12 +1,12 @@
 #!/usr/bin/node
 'use strict';
 //checks number of arguments
-const numArguments = process.argv.length - 2//subtract ile name node
+const numArguments = process.argv.length;
 
-if (numArguments === 0) {
+if (numArguments === 2) {
 	console.log("No argument");
 }
-else if (numArguments === 1) {
+else if (numArguments === 3) {
 	console.log("Argument found");
 }
 else {
