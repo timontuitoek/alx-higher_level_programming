@@ -3,7 +3,7 @@
 const cMessage = 'C is fun';
 console.log(cMessage);
 
-const pythonMessage = 'Pytho is fun';
+const pythonMessage = 'Python is fun';
 console.log(pythonMessage);
 
 const jsMessage = 'JavaScript is amazing';
