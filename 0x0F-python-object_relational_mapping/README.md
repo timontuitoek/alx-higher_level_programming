@@ -14,7 +14,6 @@
 SELECT * FROM USERS WHERE zip_code=94107;
 iThe equivalent Django ORM query would instead look like the following Python code:
 
-# obtain everyone in the 94107 zip code and assign to users variable
 users = Users.objects.filter(zip_code=94107)
 </p>
 <h4> Object Relational Tutorial </h4>
