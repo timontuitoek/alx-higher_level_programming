@@ -16,12 +16,22 @@ if __name__ == '__main__':
             port=3306)
 
     cur = db.cursor()
-    match = argv[4]
-    cur.execute("SELECT * FROM states \
-            WHERE name LIKE %s \
-            ORDER BY states.id ASC" (match, ))
 
-    rows = cur.fetchall()
+            cur.execute("""
+            SELECT
+                *
+            FROM
+                states
+            WHERE
+                name LIKE BINARY %(name)s
+            ORDER BY
+                states.id ASC
+        """, {
+            'name': argv[4]
+        })
 
-    for row in rows:
-        print(row)
+        rows = cur.fetchall()
+
+    if rows is not None:
+        for row in rows:
+            print(row)
