@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-import file
+script that lists all State objects that
+contain the letter a from the database
 """
 
 from sys import argv
@@ -10,7 +11,7 @@ from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
     """
-    Access the database and get the states with letter 'a'
+    Access the database and get a state
     """
 
     db_uri = 'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
@@ -20,9 +21,5 @@ if __name__ == "__main__":
 
     session = Session()
 
-    states_with_a = session.query(State).filter(State.name.like('%a%'))
-    .order_by(State.id)
-
-    for state in states_with_a:
-        print('{}: {}'.format(state.id, state.name))
-
+    for instance in session.query(State).filter(State.name.contains('a')):
+        print('{0}: {1}'.format(instance.id, instance.name))
