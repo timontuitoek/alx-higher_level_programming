@@ -15,9 +15,8 @@ if __name__ == '__main__':
             db=argv[3],
             port=3306)
 
-    cur = db.cursor()
-
-            cur.execute("""
+    with db.cursor() as cur:
+        cur.execute("""
             SELECT
                 *
             FROM
