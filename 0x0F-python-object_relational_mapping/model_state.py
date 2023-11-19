@@ -14,7 +14,7 @@ class State(Base):
     class definiftion
     """
 
-    __table__ = 'states'
+    __tablename__ = 'states'
 
     id = Column(Integer, primary_key=True, nuliable=False, autoincrement=True)
     name = Column(String(128), nullable=False)
