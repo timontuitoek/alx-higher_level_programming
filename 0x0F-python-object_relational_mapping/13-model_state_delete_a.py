@@ -21,10 +21,7 @@ if __name__ == "__main__":
 
     session = Session()
 
-    for states_to_delete in session.query(State)
-    .filter(State.name.like('%a%')).all()
-
-    for state in states_to_delete:
+    for state in session.query(State).filter(State.name.contains('a')):
         session.delete(state)
 
     session.commit()
