@@ -107,6 +107,7 @@ HTTP
 Set-Cookie: <cookie-name>=<cookie-value>
 ```
 </pre>
+<p>This instructs the server sending headers to tell the client to store a pair of cookies:</p>
 <pre>
 ```
 HTTP
