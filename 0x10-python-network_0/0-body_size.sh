@@ -11,7 +11,7 @@ url="$1"
 
 # Send a request to the URL using curl with the -sI option to fetch only the headers
 # Then, use grep and awk to extract the size of the response body in bytes from the Content-Length header
-response_size=$(curl -sI "$url" | grep -i Content-Length | awk '{print $2}')
+response_size=$(curl -sI "$url" | grep -i Content-Length | awk '{print $2}' | tr -d '\r')
 
 # Check if the size of the response body was successfully extracted
 if [ -z "$response_size" ]; then
