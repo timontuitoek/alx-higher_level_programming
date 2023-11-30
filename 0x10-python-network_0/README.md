@@ -83,5 +83,50 @@ X-Pad: avoid browser bug
 </pre>
 <p>The browser receives the response message, interprets the message and displays the contents of the message on the browser's window according to the media type of the response (as in the Content-Type response header). Common media type include "text/plain", "text/html", "image/gif", "image/jpeg", "audio/mpeg", "video/mpeg", "application/msword", and "application/pdf".</p>
 <p>In its idling state, an HTTP server does nothing but listening to the IP address(es) and port(s) specified in the configuration for incoming request. When a request arrives, the server analyzes the message header, applies rules specified in the configuration, and takes the appropriate action. The webmaster's main control over the action of web server is via the configuration, which will be dealt with in greater details in the later sections.</p>
+<br>
+<h2>Using HTTP cookies</h2>
+<p>An HTTP cookie (web cookie, browser cookie) is a small piece of data that a server sends to a user's web browser. The browser may store the cookie and send it back to the same server with later requests. Typically, an HTTP cookie is used to tell if two requests come from the same browser—keeping a user logged in, for example. It remembers stateful information for the stateless HTTP protocol.</p>
+<p>Cookies are mainly used for three purposes:
+
+Session management
+Logins, shopping carts, game scores, or anything else the server should remember
+
+Personalization
+User preferences, themes, and other settings
+
+Tracking
+Recording and analyzing user behavior</p>
+<h5>Creating cookies</h5>
+<p>After receiving an HTTP request, a server can send one or more Set-Cookie headers with the response. The browser usually stores the cookie and sends it with requests made to the same server inside a Cookie HTTP header. You can specify an expiration date or time period after which the cookie shouldn't be sent. You can also set additional restrictions to a specific domain and path to limit where the cookie is sent.</p>
+<h6>The Set-Cookie and Cookie headers</h6>
+<p>The Set-Cookie HTTP response header sends cookies from the server to the user agent. A simple cookie is set like this:</p>
+<pre>
+```
+HTTP
+
+Set-Cookie: <cookie-name>=<cookie-value>
+```
+</pre>
+<pre>
+```
+HTTP
+
+HTTP/2.0 200 OK
+Content-Type: text/html
+Set-Cookie: yummy_cookie=choco
+Set-Cookie: tasty_cookie=strawberry
+
+```
+</pre>
+<p>Then, with every subsequent request to the server, the browser sends all previously stored cookies back to the server using the Cookie header.</p>
+<pre>
+```
+HTTP
+
+GET /sample_page.html HTTP/2.0
+Host: www.example.org
+Cookie: yummy_cookie=choco; tasty_cookie=strawberry
+```
+</pre>
 </head>
 </html>
