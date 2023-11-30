@@ -1,6 +1,7 @@
 <html>
 <head>
 <h1>0x10. Python - Network #0: The WEB and Cookies</h1>
+</head>
 <p>Internet (or The Web) is a massive distributed client/server information system as depicted in the following diagram.</p>
 <img src="https://www3.ntu.edu.sg/home/ehchua/programming/webprogramming/images/TheWeb.png" alt="Web">
 <p>Many applications are running concurrently over the Web, such as web browsing/surfing, e-mail, file transfer, audio & video streaming, and so on.  In order for proper communication to take place between the client and the server, these applications must agree on a specific application-level protocol such as HTTP, FTP, SMTP, POP, and etc.</p>
@@ -103,11 +104,26 @@ Recording and analyzing user behavior</p>
 <pre>
 ```
 HTTP
-
 Set-Cookie: <cookie-name>=<cookie-value>
-
+```
+</pre>
+<pre>
+```
+HTTP
+HTTP/2.0 200 OK
+Content-Type: text/html
+Set-Cookie: yummy_cookie=choco
+Set-Cookie: tasty_cookie=strawberry
 ```
 </pre>
 
-</head>
+<p>Then, with every subsequent request to the server, the browser sends all previously stored cookies back to the server using the Cookie header.</p>
+<pre>
+```
+HTTP
+GET /sample_page.html HTTP/2.0
+Host: www.example.org
+Cookie: yummy_cookie=choco; tasty_cookie=strawberry
+```
+</pre>
 </html>
