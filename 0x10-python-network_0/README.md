@@ -105,28 +105,9 @@ Recording and analyzing user behavior</p>
 HTTP
 
 Set-Cookie: <cookie-name>=<cookie-value>
-```
-</pre>
-<pre>
-```
-HTTP
-
-HTTP/2.0 200 OK
-Content-Type: text/html
-Set-Cookie: yummy_cookie=choco
-Set-Cookie: tasty_cookie=strawberry
 
 ```
 </pre>
-<p>Then, with every subsequent request to the server, the browser sends all previously stored cookies back to the server using the Cookie header.</p>
-<pre>
-```
-HTTP
 
-GET /sample_page.html HTTP/2.0
-Host: www.example.org
-Cookie: yummy_cookie=choco; tasty_cookie=strawberry
-```
-</pre>
 </head>
 </html>
