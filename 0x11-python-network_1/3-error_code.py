@@ -3,20 +3,24 @@
 importing files from request
 """
 
-import urllib.request
-import urllib.error
 import sys
+import urllib.request
 
-def send_request_and_display_body(url):
+def get_url_content(url):
     try:
         with urllib.request.urlopen(url) as response:
-            response_body = response.read().decode('utf-8')
-            print(response_body)
+            html = response.read().decode('utf-8')
+            print(html)
 
-    except urllib.error.HTTPError as e:
-        print(f"Error code: {e.code}")
+    except urllib.error.HTTPError as errh:
+        print(f'Error code: {errh.code}')
+    except urllib.error.URLError as erru:
+        print(f'URL Error: {erru.reason}')
+    except Exception as err:
+        print(f'Error: {err}')
 
-if __name__ == "__main__":
-    url = sys.argv[1]
-
-    send_request_and_display_body(url)
+if __name__ == '__main__':
+    if len(sys.argv) < 2:
+        print('Please provide a URL as argument.')
+    else:
+        get_url_content(sys.argv[1])
