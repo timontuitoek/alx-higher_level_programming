@@ -4,9 +4,8 @@ Takes in a URL, sends a request to the URL and displays the value of
 the X-Request-Id variable
 """
 
-
 import urllib.request
-import sys
+from sys import argv
 
 def get_x_request_id():
     """get X-request-Id of a given url """
@@ -16,7 +15,5 @@ def get_x_request_id():
         x_request_id = response.getheader('X-Request-Id')
     print(x_request_id)
 
-
 if __name__ == "__main__":
     get_x_request_id()
-    
