@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-
-
 """
 This module fetches the status of the URL https://alx-intranet.hbtn.io/status
 and displays the body of the response in a tabulated format.
