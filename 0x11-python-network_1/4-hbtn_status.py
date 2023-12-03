@@ -3,17 +3,22 @@
 This script takes a URL as input, sends a request to the URL, and displays the value of the variable X-Request-Id in the response header.
 """
 
-import urllib.request
-from urllib.error import HTTPError
 import sys
+import urllib.request
+import urllib.error
 
-def fetch_url(url):
+def get_url_content(url):
     try:
         with urllib.request.urlopen(url) as response:
-            print(response.read().decode('utf-8'))
-    except HTTPError as e:
-        print(f"Error code: {e.code}")
+            body = response.read().decode('utf-8')
+            print(body)
+    except urllib.error.HTTPError as e:
+        print("Error code:", e.code)
+    except Exception as e:
+        print("An error occurred:", e)
 
-# Example usage
-url_to_fetch = sys.argv[1]
-fetch_url(url_to_fetch)
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Usage: python get_url_content.py <URL>")
+    else:
+        get_url_content(sys.argv[1])
