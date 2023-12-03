@@ -5,7 +5,7 @@ the X-Request-Id variable
 """
 
 import urllib.request
-from sys import argv
+import sys
 
 def get_x_request_id():
     """get X-request-Id of a given url """
