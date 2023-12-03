@@ -7,6 +7,7 @@ and displays the body of the response in a tabulated format.
 
 from urllib import request
 
+
 def fetch_status(url):
     """
     Fetches the status of the given URL and displays the body of the response.
