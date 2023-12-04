@@ -2,8 +2,6 @@
 '''
 import requests
 '''
-
-
 if __name__ == '__main__':
     import requests
     from sys import argv
