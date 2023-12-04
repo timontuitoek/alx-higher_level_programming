@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This script takes a URL as input, sends a request to the URL, and displays the value
+script takes a URL as input, sends a request to the URL and displays the value
 """
 import requests
 
