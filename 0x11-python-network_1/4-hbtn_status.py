@@ -3,22 +3,38 @@
 This script takes a URL as input, sends a request to the URL, and displays the value of the variable X-Request-Id in the response header.
 """
 
-import sys
-import urllib.request
-import urllib.error
+import requests
+import subprocess
+import shlex
 
-def get_url_content(url):
+def run_command(command):
     try:
-        with urllib.request.urlopen(url) as response:
-            body = response.read().decode('utf-8')
-            print(body)
-    except urllib.error.HTTPError as e:
-        print("Error code:", e.code)
+        process = subprocess.Popen(shlex.split(command), stdout=subprocess.PIPE)
+        output, error = process.communicate()
+        return output, error
     except Exception as e:
-        print("An error occurred:", e)
+        return None, str(e)
+
+def fetch_status():
+    url = "https://alx-intranet.hbtn.io/status"
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        data = response.json()
+
+        print("\n".join([f"{key}: {value}" for key, value in data.items()]))
+
+    except requests.exceptions.HTTPError as errh:
+        print("HTTP Error:", errh)
+    except requests.exceptions.ConnectionError as errc:
+        print("Error Connecting:", errc)
+    except requests.exceptions.Timeout as errt:
+        print("Timeout Error:", errt)
+    except requests.exceptions.RequestException as err:
+        print("Something went wrong:", err)
+
+def main():
+    fetch_status()
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python get_url_content.py <URL>")
-    else:
-        get_url_content(sys.argv[1])
+    main()
