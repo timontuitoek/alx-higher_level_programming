@@ -6,6 +6,7 @@ importing files from request
 import sys
 import urllib.request
 
+
 def get_url_content(url):
     try:
         with urllib.request.urlopen(url) as response:
@@ -18,6 +19,7 @@ def get_url_content(url):
         print(f'URL Error: {erru.reason}')
     except Exception as err:
         print(f'Error: {err}')
+
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
