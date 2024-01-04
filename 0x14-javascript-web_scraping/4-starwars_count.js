@@ -1,7 +1,7 @@
 #!/usr/bin/node
-const request = require("request");
+const request = require('request');
 const apiUrl = process.argv[2];
-const characterId = "18"; // Wedge Antilles character ID
+const characterId = '18'; // Wedge Antilles character ID
 
 request.get(apiUrl, (error, response, body) => {
   if (error) {
